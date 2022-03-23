@@ -1,4 +1,4 @@
-- name: play on rols
+- name: play on roles
   hosts: all
   roles:
     - demo
