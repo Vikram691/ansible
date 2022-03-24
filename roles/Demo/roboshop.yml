@@ -1,4 +1,0 @@
-- name: Setup frontend Component
-  hosts: Frontend
-  roles:
-    - frontend

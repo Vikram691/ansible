@@ -1,4 +1,0 @@
-- name: play on roles
-  hosts: all
-  roles:
-    - demo
