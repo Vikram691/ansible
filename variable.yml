@@ -37,3 +37,11 @@
     - name: print URL
       ansible.builtin.debug:
         msg: URL ={{URL}}
+# ip address and dns name
+
+- name: IP address
+  hosts: all
+  tasks:
+    - name: print IP address
+      ansible.builtin.debug:
+        msg: Architecture = {{ansible_architecture}}, IP address = {{ansible_eth0.ipv4.address}}
