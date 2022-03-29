@@ -45,3 +45,19 @@
     - name: print IP address
       ansible.builtin.debug:
         msg: Architecture = {{ansible_architecture}}, IP address = {{ansible_eth0.ipv4.address}}
+
+ # ansible runtime variables
+
+- name: Register variable
+  hosts: all
+  tasks:
+    - name: Run shell command
+      ansible.builtin.shell: uptime
+      register: OUT
+
+    - name: Print output of shell command
+      ansible.builtin.debug:
+        msg: {{"OUT"}}
+
+
+
