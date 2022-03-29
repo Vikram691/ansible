@@ -29,3 +29,11 @@
       vars:
         URL: hosts.example.com
 
+# inventory level variable
+
+- name: inventory level variable
+  hosts: all
+  tasks:
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL ={{URL}}
