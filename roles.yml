@@ -1,4 +1,5 @@
 - name: play on role
   hosts: all
+  meta: clear_host_errors
   roles:
     - demo
