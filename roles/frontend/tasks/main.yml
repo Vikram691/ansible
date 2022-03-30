@@ -27,7 +27,7 @@
 - name: download and extract Frontend
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dst: /tmp
+    dest: /tmp
     remote_src: yes
 
 - name: cleanup old html content
