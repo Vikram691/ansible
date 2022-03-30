@@ -55,9 +55,6 @@
       ansible.builtin.shell: uptime
       register: OUT
 
-    - name: Print output of shell command
-      ansible.builtin.debug:
-        msg: "{{OUT.stdout}}"
 
 
 
