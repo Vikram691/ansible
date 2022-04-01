@@ -21,7 +21,7 @@
     enabled: yes
 
 - name: download and extract mongodb schema
-  anible.builtin.unarchieve:
+  ansible.builtin.unarchieve:
     scr: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
     dest: /temp
     remote_src: yes
