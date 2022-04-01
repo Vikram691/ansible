@@ -1,8 +1,8 @@
 - name: Demo on loops
   hosts: localhost
   tasks:
-    - print Fruit name
-    debug:
+    - name: print Fruit name
+      debug:
     msg: Fruit name = {{item}}
     loop:
       - apple
