@@ -2,10 +2,15 @@
   ansible.builtin.debug:
     msg: MongoDb
 
-- name: Copy mongodb
+- name: Copy mongodb repo file
   ansible.builtin.copy:
     src: mongodb.repo
     dest: /etc/yum.repos.d/mongodb.repo
+
+- name: install mongodb
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: installed
 
 - name: update mongodb configuration- update listen Address
   ansible.builtin.replace:
