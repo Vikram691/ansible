@@ -1,3 +1,39 @@
 - name: print mongodb
   ansible.builtin.debug:
     msg: MongoDb
+
+- name: Copy mongodb
+  ansible.builtin.copy:
+    src: mongodb.repo
+    dest: /etc/yum.repo.d/mongodb.repo
+
+- name: update mongodb configuration- update listen Address
+  ansible.builtin.replace:
+    path: /etc/mongodb.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+
+- name: start mongodb servie
+  ansible.builtin.systemd:
+    name: mongodb
+    state: started
+    enabled: yes
+
+- name: download and extract mongodb schema
+  anible.builtin.unarchieve:
+    scr: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
+    dest: /temp
+    remote_src: yes
+
+- name: load catelogue schema
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/catalogue.js"
+    idempotent: yes
+
+- name: load user schema
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/catalogue.js"
+    idempotent: yes
+
+
