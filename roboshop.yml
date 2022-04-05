@@ -16,3 +16,10 @@
   become: yes
   roles:
     - catalogue
+
+
+- name: roboshop setup
+  become: yes
+  hosts: '{{HOST}}'
+  roles:
+    - "{{role_name}}"
