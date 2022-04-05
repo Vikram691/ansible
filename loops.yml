@@ -8,3 +8,11 @@
         - apple
         - banana
         - orange
+
+    - name: print count with names
+      debug:
+        msg: Fruit name = {{item.name}}, Available count = {{item.count}}
+        loop:
+          - {name: apple, count: 10}
+          - {name: banana, count: 10}
+          - {name: orange, count: 10}
