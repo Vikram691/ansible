@@ -24,7 +24,7 @@
     name: nginx
     state: installed
 
--- name: download and extract frontend
+- name: download and extract frontend
   include_role:
     name: common
     tasks_from: download
